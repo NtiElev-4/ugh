@@ -1,1 +1,25 @@
-<h1> fan </h1>
+<!DOCTYPE HTML>
+<html>
+<script> 
+function ad(){
+let nr1 = document.getElementById('nr1').value;
+let nr2 = document.getElementById('nr2').value;
+let nr3 = Number(nr1) + Number(nr2);
+document.getElementById('num').innerHTML = nr3;
+}
+
+</script>
+<body>
+<form>
+<input type="nummer" id="nr1" name="nr1" required placeholder="Skriv tal här"> </input>
+<br>
+<input type="nummer" id="nr2" name="nr2" required placeholder="Skriv tal här"> </input>
+</form>
+</p>
+</div>
+<button type="button" onclick="ad()">Summera</button>
+
+<p id="num"> </p>
+
+</body>
+</html>
