@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<!--Gör login.html.
+På register.html
+
+Lägg till verifiering av lösenord. Vid sändning av formulär ska ett script avgöra om lösenordet matchar, är längre än 6 tecken och har minst en siffra i sig. 
+
+Lägg till input samt passande text för ett fält med personnummer och se till att det som skrivs in följer formatet “YYMMDD - xxxx”; Där alla Y, M, D och X är en siffra.
+
+Sätt en liten “ * ” vid Användarnamn, Lösenord, Verifiering av lösenord och Email. Dessa fält måste anges före formuläret får sändas och detta ska framgå tydligt.
+
+ -->
+</head>
+<body>
+<p>En asterisk (<font color="red">*</font>) bervid ett fält betyder att fältet är nödvändigt</p>
+<form id="formul">
+<label style="color:red">*</label>
+<label>Namn</label>
+<input type="text" name="användarnamn" required autofocus placeholder="Skriv användarnamn"></input>
+<br>
+<br>
+<label style="color:red">*</label>
+<label>Lösenord</label>
+<input type="password" id="1step" name="lösen" required placeholder="Skriv lösenord"  pattern="(?=.*\d)(?=.*[A-Za-z]).{6,}" title="Längre än 6 tecken och har minst en siffra i sig"></input type="submit">
+<br>
+<br>
+<label style="color:red">*</label>
+<label>Upprepa lösenord</label>
+<input type="password" id="2step" name="lösen" required placeholder="Skriv lösenordet igen"></input>
+<br>
+<br>
+<label style="color:red">*</label>
+<label>Personnummer</label>
+<input type="datetime" pattern="[0-9]{6}-[0-9]{4}" placeholder="YYMMDD - XXXX"></input>
+<br>
+<br>
+<label style="color:red">*</label>
+<label>Mail</label>
+<input type="email" name="mail" required placeholder="placeholder@mail.com" ></input>
+<br>
+<br>
+<label>Årskurs</label>
+<select type="årskurs" name="år">
+<option>None</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+</select>
+<br>
+<br>
+<button type="submit">Registrera</button>
+
+</form>
+<br>
+<a href="login.html">
+<button>Logga in</button>
+</a>
+<script>
+document.getElementById("formul").addEventListener("submit", function(event){
+var lösenord = document.getElementById("1step").value;
+var verif = document.getElementById("2step").value;
+
+if (lösenord !== verif){
+	alert("Lösenorden matchar ej");
+	event.preventDefault();
+}
+});
+</script>
+</body>
+
+</html>
